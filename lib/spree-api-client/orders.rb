@@ -14,7 +14,7 @@ module Spree
           post("orders", options)
         end
 
-        def update_order(order_number, options=<{})
+        def update_order(order_number, options={})
           put("orders/#{order_number}", options)
         end
         
