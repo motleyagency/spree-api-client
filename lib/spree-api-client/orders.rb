@@ -17,6 +17,10 @@ module Spree
         def update_order(order_number, options={})
           put("orders/#{order_number}", options)
         end
+
+        def prepare_order_for_checkout(order_number, options={})
+          post("prepare_order/#{order_number}", options)
+        end
         
         def update_order_address(order_number, options={})
           put("orders/#{order_number}/address", options)
