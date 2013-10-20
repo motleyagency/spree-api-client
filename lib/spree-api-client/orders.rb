@@ -13,6 +13,10 @@ module Spree
         def create_order(options={})
           post("orders", options)
         end
+
+        def update_order(order_number, options=<{})
+          put("orders/#{order_number}", options)
+        end
         
         def update_order_address(order_number, options={})
           put("orders/#{order_number}/address", options)
