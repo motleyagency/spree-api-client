@@ -12,7 +12,7 @@ module Spree
           get("taxonomies/#{taxonomy_id}/taxons", options)
         end
 
-        def taxon(taxonomy_id, taxon_id, options={})
+        def taxonomy(taxonomy_id, taxon_id, options={})
           get("taxonomies/#{taxonomy_id}/taxons/#{taxon_id}", options)
         end
 
