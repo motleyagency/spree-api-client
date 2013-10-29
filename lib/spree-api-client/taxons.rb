@@ -8,11 +8,11 @@ module Spree
           get("taxons/?ids=#{taxon_ids.join(',')}", options)
         end
 
-        def taxons(taxonomy_id, options={})
+        def taxonomy_taxons(taxonomy_id, options={})
           get("taxonomies/#{taxonomy_id}/taxons", options)
         end
 
-        def taxonomy(taxonomy_id, taxon_id, options={})
+        def taxonomy_taxon(taxonomy_id, taxon_id, options={})
           get("taxonomies/#{taxonomy_id}/taxons/#{taxon_id}", options)
         end
 
