@@ -18,7 +18,7 @@ module Spree
 
               case method
               when :get
-                options.merge(:per_page => per_page)
+                options.merge(:per_page => per_page, :locale => locale)
                 request.url(path, options)
               when :delete, :head
                 request.url(path, options)
