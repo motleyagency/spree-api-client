@@ -16,9 +16,11 @@ module Spree
                 request.headers['X-Spree-Token'] = token
               end
 
+              options.merge!(:locale => locale)
+
               case method
               when :get
-                options.merge(:per_page => per_page, :locale => locale)
+                options.merge!(:per_page => per_page)
                 request.url(path, options)
               when :delete, :head
                 request.url(path, options)
