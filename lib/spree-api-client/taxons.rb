@@ -3,6 +3,10 @@ module Spree
     class Client
       module Taxons
         
+        def character_taxon(internal_tag, options={})
+          get("taxons/character/#{internal_tag}", options)
+        end
+
         def taxons(taxon_ids, options={})
           return [] unless taxon_ids.length
           get("taxons/?ids=#{taxon_ids.join(',')}", options)
