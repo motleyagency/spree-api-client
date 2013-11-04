@@ -9,6 +9,10 @@ module Spree
         def order(order_number, options={})
           get("orders/#{order_number}", options)
         end
+
+        def order_completed?(order_number, options={})
+          get("orders/#{order_number}/completed", options)
+        end
         
         def create_order(options={})
           post("orders", options)
