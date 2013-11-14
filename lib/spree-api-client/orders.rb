@@ -23,7 +23,15 @@ module Spree
         end
 
         def prepare_order_for_checkout(order_number, options={})
-          post("prepare_order/#{order_number}", options)
+          post("orders/#{order_number}/prepare_order", options)
+        end
+
+        def set_order_owner(order_number, options={})
+          put("orders/#{order_number}/owner", options)
+        end
+
+        def prepare_order_for_checkout(order_number, options={})
+          post("orders/#{order_number}/prepare_order", options)
         end
         
         def update_order_address(order_number, options={})
