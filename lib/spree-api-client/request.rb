@@ -20,7 +20,7 @@ module Spree
 
               case method
               when :get
-                options.merge!(:per_page => per_page)
+                options[:per_page] = per_page unless options[:per_page]
                 request.url(path, options)
               when :delete, :head
                 request.url(path, options)
