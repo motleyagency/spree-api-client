@@ -7,9 +7,12 @@ module Spree
           get("taxons/character/#{internal_tag}", options)
         end
 
-        def taxons(taxon_ids, options={})
-          return [] unless taxon_ids.length
-          get("taxons/?ids=#{taxon_ids.join(',')}", options)
+        def taxons(taxon_ids=nil, options={})
+          if taxon_ids.nil? || taxon_ids.empty?
+            get("taxons", options)
+          else
+            get("taxons/?ids=#{taxon_ids.join(',')}", options)
+          end
         end
 
         def taxonomy_taxons(taxonomy_id, options={})
