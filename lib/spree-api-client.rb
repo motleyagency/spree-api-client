@@ -40,11 +40,12 @@ module Spree
       include Spree::API::Client::Shipments
       include Spree::API::Client::Users
 
-      attr_accessor :api_endpoint, :api_token, :per_page, :locale
-      def initialize(api_endpoint, api_token, locale, options={})
+      attr_accessor :api_endpoint, :api_token, :per_page, :locale, :currency
+      def initialize(api_endpoint, api_token, options={})
         @api_endpoint = api_endpoint
         @api_token = api_token
-        @locale = locale
+        @locale = options[:locale]
+        @currency = options[:currency]
         @per_page = options.fetch(:per_page, 30)
       end
     end

@@ -16,7 +16,8 @@ module Spree
                 request.headers['X-Spree-Token'] = token
               end
 
-              options[:locale] = locale if options[:locale].nil?
+              options[:locale] = locale if options[:locale].nil? && !locale.nil?
+              options[:currency] = currency if options[:currency].nil? && !currency.nil?
 
               case method
               when :get
