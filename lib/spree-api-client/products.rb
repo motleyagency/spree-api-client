@@ -6,6 +6,10 @@ module Spree
           get('products', options)['products']
         end
         
+        def product_by_ean(ean, options={})
+          get("products/ean/#{ean}", options)
+        end
+
         def product(permalink_or_id, options={})
           get("products/#{permalink_or_id}", options)
         end
