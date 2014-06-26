@@ -18,6 +18,7 @@ require 'spree-api-client/taxons'
 require 'spree-api-client/payments'
 require 'spree-api-client/shipments'
 require 'spree-api-client/users'
+require 'spree-api-client/slides'
 
 module Spree
   module API
@@ -39,6 +40,7 @@ module Spree
       include Spree::API::Client::Payments
       include Spree::API::Client::Shipments
       include Spree::API::Client::Users
+      include Spree::API::Client::Slides
 
       attr_accessor :api_endpoint, :api_token, :per_page, :locale, :currency
       def initialize(api_endpoint, api_token, options={})
